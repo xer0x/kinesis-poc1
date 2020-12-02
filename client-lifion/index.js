@@ -16,7 +16,6 @@ const kinesis = new Kinesis({
 
 kinesis.on('data', data => {
   console.log('Incoming data:', data);
-  for ({
 });
 
 kinesis.startConsumer().then(() => {
