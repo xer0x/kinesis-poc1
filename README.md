@@ -1,11 +1,11 @@
-# Kinesis 
+# Exploring Node.js libraries for AWS Kinesis
 
-## Learning how to read
+## Libraries
 
-There is the main AWS SDK Javascript driver for Kinesis. It may not support being an enhanced fanout consumer, and we may want to be. We also might not care.
+Investigating
 
-- AWS SDK 
-- Lifion library
+- [AWSLABS/amazon-kinesis-client-nodejs](https://github.com/awslabs/amazon-kinesis-client-nodejs): The library from AWS uses Java and a multi-lang KCL adapter. It only supports enhanced-fanout after [version 2.0.0](https://github.com/lifion/lifion-kinesis).
+- [Lifion-Kinesis library](https://github.com/lifion/lifion-kinesis): This library from Lifion is built in Javascript, and supports enhanced-fanout.
 
-Here is Lifion's introduction to their driver in 2018, and why they created it: https://eng.lifion.com/introducing-lifion-kinesis-eecb3133221e tl;dr the KCL library is Java only, and they didn't want to run the JVM. They also wanted to be able to use the enhanced consumer to recieve messages via push, instead of the original pull method. The driver did not support pull in the beginning, but it may by now.
+Lifion's introduction to their library explains why they created it: https://eng.lifion.com/introducing-lifion-kinesis-eecb3133221e Some of their reasons were that the KCL library requires Java, and they didn't want to run the JVM. They also wanted to be able to use the enhanced consumer to recieve messages via push, instead of the original pull method. The official AWS Node.js driver did not support enhanced fan-out consumers, and I'm not sure if it does today.
 
