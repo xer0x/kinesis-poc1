@@ -16,6 +16,15 @@ aws \
   --region=us-west-2 \
   --endpoint-url="$ENDPOINT" \
   kinesis \
+  create-stream \
+  --stream-name "$STREAM" \
+  --shard-count 1
+
+aws \
+  --no-verify-ssl \
+  --region=us-west-2 \
+  --endpoint-url="$ENDPOINT" \
+  kinesis \
   put-record \
   --stream-name "$STREAM" \
   --partition-key "$PARTITION_KEY" \
